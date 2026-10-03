@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Tarea: permiso declarado por la app propietaria (com.example.crud). Al ser de
+        protectionLevel="normal", el sistema lo concede al instalar esta app; sin él, el
+        ContentResolver recibiría una SecurityException al consultar la URI.
+    -->
+    <uses-permission android:name="com.example.crud.permission.LEER_HISTORIAL" />
+
+    <!--
+        Desde Android 11 el filtrado de visibilidad de paquetes esconde los providers de
+        otras apps: hay que declarar explícitamente la autoridad que se va a consultar.
+    -->
+    <queries>
+        <provider android:authorities="com.example.crud.provider" />
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AuditoriaSensores">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

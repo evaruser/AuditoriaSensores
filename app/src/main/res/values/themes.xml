@@ -1,0 +1,4 @@
+<resources>
+    <!-- Sin ActionBar: la propia pantalla dibuja su encabezado y aplica los insets. -->
+    <style name="Theme.AuditoriaSensores" parent="Theme.AppCompat.DayNight.NoActionBar" />
+</resources>
